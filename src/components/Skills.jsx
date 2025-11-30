@@ -21,7 +21,7 @@ const SkillBox = ({ img, title, description }) => (
 
 export default function Skills() {
   return (
-    <section className='relative min-h-screen overflow-hidden flex flex-col items-center justify-center text-whit px-4 py-10'>
+    <section id='skills' className='relative min-h-screen overflow-hidden flex flex-col items-center justify-center text-whit px-4 py-10'>
       <div className='absolute z-0 w-72 h-36 sm:w-96 sm:h-44 bg-[#cd3cf5] rounded-full blur-3xl opacity-50 top-10 sm:top-28
       left-1/2 transform -translate-x-1/2'></div>
       <img
