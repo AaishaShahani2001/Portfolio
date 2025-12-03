@@ -2,49 +2,97 @@ import React from 'react'
 import Navbar from './Navbar'
 import { FiGithub, FiLinkedin } from 'react-icons/fi'
 import imgHero from '../assets/imgHero.jpg'
+import { TypeAnimation } from 'react-type-animation'
 
 export default function Hero() {
   return (
-    <div className='realtive overflow-hidden min-h-[550px] sm:min-h-[600px] flex flex-col items-center'>
+    <div className='relative overflow-hidden min-h-[650px] flex flex-col items-center'>
       <Navbar />
-      <main id='home' className='flex flex-col md:flex-row items-center justify-center w-full px-4
-       md:px-52 pb-4 md:pb-24 md:pt-32 pt-24 mt-14 md:mt-0 z-10'>
+
+      <main 
+        id='home' 
+        className='flex flex-col md:flex-row items-center justify-center w-full px-6 md:px-32 pb-10 md:pb-24 pt-32 mt-10 z-10'
+      >
+
+        {/* LEFT CONTENT */}
         <section
-          className='flex-1 mr-28 md:text-left mt-10 md:mt-0 relative'
-          data-aos="fade-up" data-aos-duration="500"
+          className='flex-1 md:text-left mt-10 md:mt-0 relative'
+          data-aos="fade-up" 
+          data-aos-duration="600"
         >
 
+          {/* Background Glow */}
           <div className='absolute -z-10 w-60 h-60 bg-[#cd3cf5] rounded-full blur-3xl opacity-50 -top-5 -left-12'></div>
+
+          {/* NAME */}
           <header>
-            <h1 className='text-4xl sm:text-4xl md:text-5xl font-bold text-white mb-4'>
+            <h1 className='text-4xl md:text-5xl font-bold text-white mb-3'>
               Aaisha Shahani
             </h1>
-            <h2 className='text-xl sm:text-4xl md:text-2xl font-bold text-[#3e0f4a] md:text-[#c744ec] mb-2'>
-              Fullstack Developer
+
+            {/* Typing Animation */}
+            <h2 className='text-xl md:text-2xl font-semibold text-purple-300'>
+              <TypeAnimation
+                sequence={[
+                  "Fullstack Developer", 1500,
+                  "Software Engineer", 1500,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
             </h2>
           </header>
-          <p className='text-base sm:text-lg md:tex-lg text-gray-300 mb-6'>
-            Crafting seamless web experiences with expertise in React, Node.js, and MongoDB.
+
+          {/* PROFESSIONAL PARAGRAPH */}
+          <p className='text-base md:text-lg text-gray-300 mt-4 mb-6 leading-relaxed max-w-xl'>
+            Passionate about creating high-quality digital experiences with
+            a strong focus on performance, scalability, and clean UI/UX.
+            I specialize in building modern web applications using
+            React, Node.js, MongoDB, and cloud-based development workflows.
           </p>
-          <div className='flex items-center space-x-4 mb-6'>
-            <a href='' className='text-white mr-6 text-3xl hover:text-gray-300'>
+
+          {/* Social Icons */}
+          <div className='flex items-center space-x-6 mb-8'>
+            <a 
+              href='' 
+              className='text-white text-3xl hover:text-purple-300 transition'>
               <FiGithub />
             </a>
-            <a href='' className='text-white mr-6 text-3xl hover:text-gray-300'>
+
+            <a 
+              href='' 
+              className='text-white text-3xl hover:text-purple-300 transition'>
               <FiLinkedin />
             </a>
           </div>
+
+          {/* CV BUTTON */}
           <a href='' download='Aaisha_Shahani_Resume.pdf'>
-            <button className='inline-flex text-white border-2 py-2 px-6 focus:outline-none hover:bg-[#801b9c] 
-              hover:shadow-[0_0_40px_rgba(128,0,128,0.7)] rounded-full text-lg'>
+            <button className='inline-flex text-white border-2 py-2 px-6 focus:outline-none 
+              hover:bg-purple-800 rounded-full text-lg 
+              hover:shadow-[0_0_30px_rgba(128,0,128,0.6)] transition'>
               Download CV
             </button>
           </a>
         </section>
-        <figure data-aos="fade-up" data-aos-duration="700" className='flex-1 flex justify-center md:justify-end mt-0'>
-          <img src={imgHero} alt='Hero Image'
-            className='h-[300px] sm:h-[400px] md:h-[485px] w-[250px] sm:w-[480px] object-cover rounded-lg' />
+
+        {/* HERO IMAGE */}
+        <figure 
+          data-aos="fade-up" 
+          data-aos-duration="700" 
+          className='flex-1 flex justify-center md:justify-end mt-10 md:mt-0'
+        >
+          <img 
+            src={imgHero} 
+            alt='Hero Image'
+            className='h-80 sm:h-[420px] md:h-[500px] w-[260px] sm:w-[350px] md:w-[430px] 
+              object-cover rounded-3xl shadow-xl 
+              transition duration-300 hover:scale-105 
+              hover:shadow-[0px_0px_40px_rgba(205,60,245,0.6)]'
+          />
         </figure>
+
       </main>
     </div>
   )
