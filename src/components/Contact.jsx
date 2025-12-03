@@ -1,68 +1,92 @@
-import React from 'react'
-import imgHero from "../assets/imgHero.jpg"
+import React from "react";
 
 export default function Contact() {
   return (
-    <section 
-      id='contact'
-      data-aos="fade-up" 
-      data-aos-delay="300" 
-      className='min-h-screen overflow-hidden flex  justify-center items-center p-6 mt-10 relative'
+    <section
+      id="contact"
+      data-aos="fade-up"
+      data-aos-delay="200"
+      className="min-h-screen flex justify-center items-center px-6 py-16 relative"
+    >
+      {/* Background Glow */}
+      <div className="absolute w-[350px] h-[350px] rounded-full bg-purple-600/40 blur-3xl -top-10 left-10"></div>
+      <div className="absolute w-[350px] h-[350px] rounded-full bg-pink-500/40 blur-3xl bottom-10 right-10"></div>
+
+      {/* Contact Card */}
+      <article
+        className="relative z-10 max-w-xl w-full bg-white/10 backdrop-blur-xl 
+        border border-white/20 shadow-lg shadow-purple-900/30 rounded-3xl p-10"
       >
-        <article className='shadow-lg rounded-lg flex flex-col md:flex-row max-w-4xl w-full relative'>
-          <aside className='w-full md:w-1/2 relative'>
-          <div className='absolute z-0 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[300px]
-          sm:w-[#400px] h-[300px] sm:h-[400px] rounded-full ng-gradient-to-r from-[#6d2897] via-[#8e6cf5]
-          to-[#bb61c5] shadow-[0_0_70px_rgba(182,0,182,0.7)] opacity-30'></div>
-          <img 
-            src={imgHero}
-            alt="Contact Us" 
-            className='h-[250px] sm:h-[400px] md:h-[485px] w-[300px] sm:w-[480px] object-cover rounded-t-lg md:rounded-r-lg relative z-10'
-          />
-          </aside>
-          {/* Form Section */}
-          <section className='p-8 w-full  md:w-1/2'>
-            <header className='mb-6'>
-              <h2 className='text-4xl font-bold text-white text-center'>Contact Me</h2>
-            </header>
-            <form className='space-y-4'>
-              <div>
-                <label htmlFor="name" className='block text-gray-300 font-medium mb-2'>Name</label>
-                <input 
-                  type="text"
-                  name='name'
-                  id="name"
-                  className='w-full px-4 py-2 rounded-lg bg-gray-400 text-white border border-gray-700 focus:outline-none focus:border-purple-500'
-                  placeholder='Your Name'
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className='block text-white mb-2'>Email</label>
-                <input 
-                  type="email"
-                  name='email'
-                  id="email"
-                  className='w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-purple-500' />
-              </div>
-              <div>
-                <label htmlFor="message" className='block text-white mb-2'>Message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows="4"
-                  className='w-full px-4 py-2 rounded-lg bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-purple-500'
-                  placeholder='Your Message'
-                >
-                </textarea>
-              </div>
-              <button className='w-full text-white border-2 py-2 px-6 focus:outline-none hover:bg-[#801b9c]
-              hover:shadow-[0_0_40px_rgba(128,0,128,0.7)] rounded-full text-lg'>
-                Send Message
-              </button>
-            </form>
-          </section>
-        </article>
-      
+        {/* Header */}
+        <header className="text-center mb-8">
+          <h2 className="text-4xl font-bold text-purple-300 drop-shadow-lg">
+            Contact Me
+          </h2>
+          <p className="text-gray-300 mt-2">
+            Let's build something amazing together!
+          </p>
+        </header>
+
+        {/* Form */}
+        <form className="space-y-5">
+
+          <div>
+            <label
+              htmlFor="name"
+              className="block text-gray-300 font-medium mb-1"
+            >
+              Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              className="w-full px-4 py-3 rounded-xl bg-gray-900 text-white 
+              border border-gray-700 focus:outline-none focus:border-purple-500"
+              placeholder="Your Name"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="email"
+              className="block text-gray-300 font-medium mb-1"
+            >
+              Email
+            </label>
+            <input
+              type="email"
+              id="email"
+              className="w-full px-4 py-3 rounded-xl bg-gray-900 text-white 
+              border border-gray-700 focus:outline-none focus:border-purple-500"
+              placeholder="example@gmail.com"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="message"
+              className="block text-gray-300 font-medium mb-1"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              rows="4"
+              className="w-full px-4 py-3 rounded-xl bg-gray-900 text-white 
+              border border-gray-700 focus:outline-none focus:border-purple-500"
+              placeholder="Type your message here..."
+            ></textarea>
+          </div>
+
+          {/* Submit Button */}
+          <button
+            className="w-full text-white bg-purple-600 py-3 rounded-full text-lg font-semibold 
+            hover:bg-purple-700 hover:shadow-[0_0_25px_rgba(168,85,247,0.7)] transition-all"
+          >
+            Send Message
+          </button>
+        </form>
+      </article>
     </section>
-  )
+  );
 }
