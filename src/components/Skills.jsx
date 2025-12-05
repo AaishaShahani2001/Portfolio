@@ -13,9 +13,9 @@ export default function Skills() {
         { name: "HTML", level: 95 },
         { name: "CSS", level: 90 },
         { name: "JavaScript", level: 85 },
-        { name: "React.js", level: 85 },
-        { name: "Vue.js", level: 75 },
-        { name: "Next.js", level: 70 },
+        { name: "React.js", level: 90 },
+        { name: "Vue.js", level: 80 },
+        { name: "Next.js", level: 75 },
         { name: "Tailwind CSS", level: 90 },
       ],
     },
@@ -26,10 +26,10 @@ export default function Skills() {
       skills: [
         { name: "Node.js", level: 85 },
         { name: "Express.js", level: 80 },
-        { name: "MongoDB", level: 75 },
-        { name: "PHP", level: 70 },
-        { name: "MySQL", level: 85 },
-        { name: "Java", level: 70 },
+        { name: "MongoDB", level: 85 },
+        { name: "PHP", level: 75 },
+        { name: "MySQL", level: 95 },
+        { name: "Java", level: 80 },
         { name: "Spring Boot", level: 65 },
       ],
     },
@@ -38,8 +38,8 @@ export default function Skills() {
       title: "Mobile Development",
       icon: <SiFlutter className="text-purple-400 text-3xl" />,
       skills: [
-        { name: "Flutter", level: 60 },
-        { name: "React Native", level: 65 },
+        { name: "Flutter", level: 75 },
+        { name: "React Native", level: 75 },
       ],
     },
 
@@ -49,7 +49,7 @@ export default function Skills() {
       skills: [
         { name: "Git", level: 90 },
         { name: "GitHub", level: 90 },
-        { name: "AWS", level: 55 },
+        { name: "AWS", level: 65 },
       ],
     },
   ];

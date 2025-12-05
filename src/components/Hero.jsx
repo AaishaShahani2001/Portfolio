@@ -9,15 +9,15 @@ export default function Hero() {
     <div className='relative overflow-hidden min-h-[650px] flex flex-col items-center'>
       <Navbar />
 
-      <main 
-        id='home' 
+      <main
+        id='home'
         className='flex flex-col md:flex-row items-center justify-center w-full px-6 md:px-32 pb-10 md:pb-24 pt-32 mt-10 z-10'
       >
 
         {/* LEFT CONTENT */}
         <section
           className='flex-1 md:text-left mt-10 md:mt-0 relative'
-          data-aos="fade-up" 
+          data-aos="fade-up"
           data-aos-duration="600"
         >
 
@@ -52,20 +52,60 @@ export default function Hero() {
             React, Node.js, MongoDB, and cloud-based development workflows.
           </p>
 
+          
           {/* Social Icons */}
-          <div className='flex items-center space-x-6 mb-8'>
-            <a 
-              href='' 
-              className='text-white text-3xl hover:text-purple-300 transition'>
-              <FiGithub />
-            </a>
+<div className='flex items-center space-x-6 mb-8'>
 
-            <a 
-              href='' 
-              className='text-white text-3xl hover:text-purple-300 transition'>
-              <FiLinkedin />
-            </a>
-          </div>
+  {/* GitHub */}
+  <a
+    href=''
+    target='_blank'
+    className='group relative flex items-center justify-center 
+               w-14 h-14 rounded-full bg-white/10 text-white text-3xl 
+               transition-all duration-300 backdrop-blur-sm'
+  >
+    {/* Hover Glow Behind */}
+    <span className='absolute inset-0 rounded-full 
+                     scale-0 group-hover:scale-150 
+                     bg-purple-600/30 blur-xl opacity-0 
+                     group-hover:opacity-100 
+                     transition-all duration-500 -z-10'>
+    </span>
+
+    {/* Icon */}
+    <FiGithub
+      className='relative z-10 transition-all duration-300 
+                 group-hover:rotate-12 group-hover:scale-110 
+                 group-hover:text-purple-300'
+    />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href=''
+    target='_blank'
+    className='group relative flex items-center justify-center 
+               w-14 h-14 rounded-full bg-white/10 text-white text-3xl 
+               transition-all duration-300 backdrop-blur-sm'
+  >
+    {/* Hover Glow Behind */}
+    <span className='absolute inset-0 rounded-full 
+                     scale-0 group-hover:scale-150 
+                     bg-purple-600/30 blur-xl opacity-0 
+                     group-hover:opacity-100 
+                     transition-all duration-500 -z-10'>
+    </span>
+
+    {/* Icon */}
+    <FiLinkedin
+      className='relative z-10 transition-all duration-300 
+                 group-hover:rotate-12 group-hover:scale-110 
+                 group-hover:text-purple-300'
+    />
+  </a>
+
+</div>
+
 
           {/* CV BUTTON */}
           <a href='' download='Aaisha_Shahani_Resume.pdf'>
@@ -78,13 +118,13 @@ export default function Hero() {
         </section>
 
         {/* HERO IMAGE */}
-        <figure 
-          data-aos="fade-up" 
-          data-aos-duration="700" 
+        <figure
+          data-aos="fade-up"
+          data-aos-duration="700"
           className='flex-1 flex justify-center md:justify-end mt-10 md:mt-0'
         >
-          <img 
-            src={imgHero} 
+          <img
+            src={imgHero}
             alt='Hero Image'
             className='h-80 sm:h-[420px] md:h-[500px] w-[260px] sm:w-[350px] md:w-[430px] 
               object-cover rounded-3xl shadow-xl 

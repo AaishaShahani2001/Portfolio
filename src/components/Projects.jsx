@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import img_vue from "../assets/img_vue.jpg";
 import img_flutter from "../assets/img_vue.jpg";
 import img_next from "../assets/img_vue.jpg";
+import img_bmi from "../assets/bmi_calculator.png";
+import img_atlasVue from "../assets/altasVue.png";
+import img_bookhive from "../assets/bookhive.png";
 
 const ProjectCard = ({ image, title, description, live, github, tech }) => {
   return (
@@ -79,17 +82,17 @@ export default function Projects() {
 
   const allProjects = [
     {
-      image: img_next,
-      title: "Next.js Health Tracker",
-      description: "Full-stack fitness tracker with charts & API routes.",
+      image: img_bookhive,
+      title: "Book Store Management",
+      description: "Full-stack",
       live: "",
       github: "",
       type: "Web",
-      tech: ["Next.js", "Tailwind", "Node"],
+      tech: ["React", "Tailwind", "Node", "Express", "Mongo DB"],
     },
     {
-      image: img_vue,
-      title: "Vue 3 Portfolio",
+      image: img_atlasVue,
+      title: "AtlasVue",
       description: "Modern animated portfolio built with Vue & GSAP.",
       live: "",
       github: "",
@@ -104,6 +107,15 @@ export default function Projects() {
       github: "",
       type: "Mobile",
       tech: ["Flutter", "Dart"],
+    },
+    {
+      image: img_bmi,
+      title: "BMI Calculator",
+      description: "Mobile app for daily habit tracking with smooth UI.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["HTML", "CSS", "JavaScript"],
     },
   ];
 
