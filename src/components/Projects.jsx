@@ -10,7 +10,7 @@ const ProjectCard = ({ image, title, description, live, github, tech, status }) 
       className="relative w-full max-w-sm p-5 rounded-3xl overflow-hidden
       backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg
       hover:shadow-purple-500/40 transition-all duration-300 group
-      hover:-translate-y-1 hover:scale-[1.01] cursor-pointer mx-auto"
+      hover:-translate-y-1 hover:scale-[1.01] mx-auto"
       data-aos="fade-up"
     >
       {/* Status Badge */}
@@ -21,65 +21,69 @@ const ProjectCard = ({ image, title, description, live, github, tech, status }) 
         {status}
       </span>
 
-      {/* Glow Effect */}
+      {/* Glow */}
       <div className="absolute z-0 w-48 h-48 bg-purple-600/40 blur-3xl rounded-full -top-10 left-5 opacity-30"></div>
 
       <div className="relative z-10">
 
         {/* Image */}
-        <figure className="relative rounded-xl overflow-hidden h-48">
+        <figure className="relative rounded-xl overflow-hidden h-48 mb-4">
           <img
             src={image}
             alt={title}
             className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
           />
-
-          {/* Hover Buttons — ALWAYS visible */}
-          <div
-            className="absolute inset-0 bg-black/40 flex items-center justify-center gap-4 
-            opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-xl z-20"
-          >
-            <a
-              href={live || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-purple-500/80 text-white px-4 py-2 rounded-xl 
-              hover:bg-purple-600 transition-all text-sm"
-            >
-              Live Demo
-            </a>
-
-            <a
-              href={github || "#"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white text-black px-4 py-2 rounded-xl 
-              hover:bg-purple-300 transition-all text-sm"
-            >
-              GitHub
-            </a>
-          </div>
         </figure>
 
+        {/* Title */}
+        <h3 className="text-xl font-bold text-white">{title}</h3>
+
+        {/* Description */}
+        <p className="text-gray-300 text-sm mt-1">{description}</p>
+
         {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mt-3">
+        <div className="flex flex-wrap gap-2 mt-4 mb-4">
           {tech.map((t, i) => (
             <span
               key={i}
-              className="px-2 py-1 text-xs bg-purple-500/20 text-purple-300 rounded-lg border border-purple-500/40"
+              className="px-2 py-1 text-xs bg-purple-500/20 text-purple-300
+              rounded-lg border border-purple-500/40"
             >
               {t}
             </span>
           ))}
         </div>
 
-        {/* Title */}
-        <header>
-          <h3 className="text-lg font-bold mt-3 text-white">{title}</h3>
-        </header>
+        {/* --- ALWAYS VISIBLE BUTTONS --- */}
 
-        {/* Description */}
-        <p className="text-gray-300 text-sm mt-1">{description}</p>
+        <div className="flex flex-col gap-3 mt-4">
+
+          {/* GitHub button - Purple Outline */}
+          <a
+            href={github || "#"}
+            target="_blank"
+            className="w-full text-center py-2 rounded-lg 
+              border border-purple-500/50 text-purple-300 
+            hover:bg-purple-500/10 hover:border-purple-500 
+            hover:text-white transition font-medium"
+          >
+            GitHub
+          </a>
+
+          {/* Live Demo button */}
+          <a
+            href={live || "#"}
+            target="_blank"
+            className="w-full text-center py-2 rounded-lg 
+              bg-linear-to-r from-purple-500 to-purple-700 
+            text-white font-semibold hover:opacity-90 transition"
+          >
+            Live Demo
+          </a>
+
+        </div>
+
+
       </div>
     </article>
   );
@@ -92,7 +96,7 @@ export default function Projects() {
   const allProjects = [
     {
       image: img_bookhive,
-      title: "Book Store Management",
+      title: "BookHive",
       description: "Full-stack book management web app.",
       live: "",
       github: "",
@@ -147,7 +151,6 @@ export default function Projects() {
 
   return (
     <main className="p-6 sm:p-10">
-
       {/* Header */}
       <section id="projects" data-aos="fade-up">
         <header className="text-center">
@@ -171,8 +174,8 @@ export default function Projects() {
               category === "All"
                 ? "calc(50% - 110px)"
                 : category === "Web"
-                ? "calc(50% - 35px)"
-                : "calc(50% + 40px)",
+                  ? "calc(50% - 35px)"
+                  : "calc(50% + 40px)",
           }}
         ></div>
 
@@ -181,11 +184,10 @@ export default function Projects() {
             key={c}
             onClick={() => handleFilter(c)}
             className={`px-4 py-1.5 rounded-xl text-sm font-medium transition-all border cursor-pointer
-            ${
-              category === c
+            ${category === c
                 ? "text-purple-400 border-purple-500"
                 : "text-white border-white/20 hover:bg-white/10"
-            }`}
+              }`}
           >
             {c}
           </button>
@@ -194,9 +196,8 @@ export default function Projects() {
 
       {/* Project Grid */}
       <section
-        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-300 ${
-          fade ? "opacity-100" : "opacity-0"
-        }`}
+        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-300 ${fade ? "opacity-100" : "opacity-0"
+          }`}
       >
         {filtered.map((project, index) => (
           <ProjectCard
