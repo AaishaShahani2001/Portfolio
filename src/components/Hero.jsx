@@ -1,6 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar'
-import { FiGithub, FiLinkedin } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi'
 import imgHero from '../assets/imgHero.jpg'
 import { TypeAnimation } from 'react-type-animation'
 
@@ -46,75 +46,61 @@ export default function Hero() {
 
           {/* PROFESSIONAL PARAGRAPH */}
           <p className='text-base md:text-lg text-gray-300 mt-4 mb-6 leading-relaxed max-w-xl'>
-            Passionate about creating high-quality digital experiences with
-            a strong focus on performance, scalability, and clean UI/UX.
-            I specialize in building modern web applications using
-            React, Node.js, MongoDB, and cloud-based development workflows.
+            3rd Year Software Engineering Student at SLIIT | Passionate about
+            building innovative web and mobile applications
           </p>
 
-          
-          {/* Social Icons */}
-<div className='flex items-center space-x-6 mb-8'>
+          {/* SOCIAL BUTTONS */}
+          <div className="flex flex-wrap items-center gap-4 mb-8">
 
-  {/* GitHub */}
-  <a
-    href=''
-    target='_blank'
-    className='group relative flex items-center justify-center 
-               w-14 h-14 rounded-full bg-white/10 text-white text-3xl 
-               transition-all duration-300 backdrop-blur-sm'
-  >
-    {/* Hover Glow Behind */}
-    <span className='absolute inset-0 rounded-full 
-                     scale-0 group-hover:scale-150 
-                     bg-purple-600/30 blur-xl opacity-0 
-                     group-hover:opacity-100 
-                     transition-all duration-500 -z-10'>
-    </span>
+            {/* GitHub BUTTON */}
+            <a
+              href=""
+              target="_blank"
+              className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 
+                        text-white px-6 py-3 rounded-xl shadow-md 
+                        transition-transform hover:scale-[1.03]"
+            >
+              <FiGithub className="text-2xl" />
+              <span className="font-semibold">GitHub</span>
+            </a>
 
-    {/* Icon */}
-    <FiGithub
-      className='relative z-10 transition-all duration-300 
-                 group-hover:rotate-12 group-hover:scale-110 
-                 group-hover:text-purple-300'
-    />
-  </a>
+            {/* LinkedIn BUTTON */}
+            <a
+              href=""
+              target="_blank"
+              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 
+                        text-white px-6 py-3 rounded-xl shadow-md
+                        transition-transform hover:scale-[1.03]"
+            >
+              <FiLinkedin className="text-2xl" />
+              <span className="font-semibold">LinkedIn</span>
+            </a>
 
-  {/* LinkedIn */}
-  <a
-    href=''
-    target='_blank'
-    className='group relative flex items-center justify-center 
-               w-14 h-14 rounded-full bg-white/10 text-white text-3xl 
-               transition-all duration-300 backdrop-blur-sm'
-  >
-    {/* Hover Glow Behind */}
-    <span className='absolute inset-0 rounded-full 
-                     scale-0 group-hover:scale-150 
-                     bg-purple-600/30 blur-xl opacity-0 
-                     group-hover:opacity-100 
-                     transition-all duration-500 -z-10'>
-    </span>
+            {/* Email BUTTON */}
+            <a
+              href="mailto:your-email@gmail.com"
+              className="flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 
+                        text-white px-6 py-3 rounded-xl shadow-md 
+                        transition-transform hover:scale-[1.03]"
+            >
+              <FiMail className="text-2xl" />
+              <span className="font-semibold">Email Me</span>
+            </a>
 
-    {/* Icon */}
-    <FiLinkedin
-      className='relative z-10 transition-all duration-300 
-                 group-hover:rotate-12 group-hover:scale-110 
-                 group-hover:text-purple-300'
-    />
-  </a>
-
-</div>
-
+          </div>
 
           {/* CV BUTTON */}
-          <a href='' download='Aaisha_Shahani_Resume.pdf'>
-            <button className='inline-flex text-white border-2 py-2 px-6 focus:outline-none 
-              hover:bg-purple-800 rounded-full text-lg 
-              hover:shadow-[0_0_30px_rgba(128,0,128,0.6)] transition'>
-              Download CV
+          <a href="" download="Aaisha_Shahani_Resume.pdf">
+            <button
+              className="flex items-center gap-2 bg-purple-700 hover:bg-purple-800 
+                         text-white px-6 py-3 rounded-xl shadow-md 
+                         transition-transform hover:scale-[1.03]"
+            >
+              <span className="font-semibold">Download CV</span>
             </button>
           </a>
+
         </section>
 
         {/* HERO IMAGE */}
@@ -127,9 +113,9 @@ export default function Hero() {
             src={imgHero}
             alt='Hero Image'
             className='h-80 sm:h-[420px] md:h-[500px] w-[260px] sm:w-[350px] md:w-[430px] 
-              object-cover rounded-3xl shadow-xl 
-              transition duration-300 hover:scale-105 
-              hover:shadow-[0px_0px_40px_rgba(205,60,245,0.6)]'
+                      object-cover rounded-3xl shadow-xl 
+                      transition duration-300 hover:scale-105 
+                      hover:shadow-[0px_0px_40px_rgba(205,60,245,0.6)]'
           />
         </figure>
 
