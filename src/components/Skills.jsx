@@ -22,14 +22,14 @@ import { FaJava, FaServer, FaMobile, FaPalette, FaBrain } from "react-icons/fa";
 import { TbBrandReactNative } from "react-icons/tb";
 
 
-// ====================================
+
 
 export default function Skills() {
   const [animatedValues, setAnimatedValues] = useState({});
 
-  // ==========================================
+  
   // ICON MAP (skill name → icon)
-  // ==========================================
+
   const iconMap = {
     HTML: <SiHtml5 className="text-orange-400 text-xl" />,
     CSS: <SiCss3 className="text-blue-400 text-xl" />,
@@ -57,9 +57,9 @@ export default function Skills() {
     AWS: <FaBrain className="text-yellow-300 text-xl" />,
   };
 
-  // ==========================================
+  
   // SKILL CATEGORIES
-  // ==========================================
+ 
   const skillCategories = [
     {
       title: "Frontend Development",
@@ -109,9 +109,9 @@ export default function Skills() {
     },
   ];
 
-  // ==========================================
+ 
   // PERCENTAGE ANIMATION
-  // ==========================================
+ 
   useEffect(() => {
     skillCategories.forEach((category) => {
       category.skills.forEach((skill) => {
@@ -130,9 +130,9 @@ export default function Skills() {
     });
   }, []);
 
-  // ==========================================
+ 
   // UI
-  // ==========================================
+ 
   return (
     <section
       id="skills"
