@@ -3,6 +3,8 @@ import img_flutter from "../assets/img_vue.jpg";
 import img_bmi from "../assets/bmi_calculator.png";
 import img_atlasVue from "../assets/altasVue.png";
 import img_bookhive from "../assets/bookhive.png";
+import img_snakegame from "../assets/snakeGame.png";
+import img_cleanearth from "../assets/cleanEarth.png";
 
 const ProjectCard = ({ image, title, description, live, github, tech, status }) => {
   return (
@@ -102,7 +104,7 @@ export default function Projects() {
       github: "",
       type: "Web",
       tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
-      status: "In Progress",
+      status: "Completed",
     },
     {
       image: img_atlasVue,
@@ -128,6 +130,26 @@ export default function Projects() {
       image: img_bmi,
       title: "BMI Calculator",
       description: "Simple BMI calculator built using HTML/CSS/JS.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["HTML", "CSS", "JavaScript"],
+      status: "Completed",
+    },
+    {
+      image: img_cleanearth,
+      title: "CleanEarth",
+      description: "Simple clean earth built using HTML/CSS/JS.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["HTML", "CSS", "JavaScript"],
+      status: "Completed",
+    },
+    {
+      image: img_snakegame,
+      title: "Snake Game",
+      description: "Simple Snake Game built using HTML/CSS/JS.",
       live: "",
       github: "",
       type: "Web",
