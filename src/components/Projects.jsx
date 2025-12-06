@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import img_vue from "../assets/img_vue.jpg";
 import img_flutter from "../assets/img_vue.jpg";
-import img_next from "../assets/img_vue.jpg";
 import img_bmi from "../assets/bmi_calculator.png";
 import img_atlasVue from "../assets/altasVue.png";
 import img_bookhive from "../assets/bookhive.png";
