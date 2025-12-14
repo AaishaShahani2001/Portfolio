@@ -9,6 +9,7 @@ import Skills from './components/Skills.jsx'
 import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import ScrollToTop from './components/ScrollToTop.jsx'
 
 function App(){
   useEffect(() => {
@@ -23,6 +24,8 @@ function App(){
       <Projects />
       <Contact />
       <Footer />
+
+      <ScrollToTop />
     </main>
 
   )
