@@ -11,7 +11,8 @@ export default function Navbar() {
     { id: 1, name: "Home", link: "#home" },
     { id: 2, name: "About", link: "#about" },
     { id: 3, name: "Skills", link: "#skills" },
-    { id: 4, name: "Projects", link: "#projects" },
+    { id: 4, name: "Achievements", link: "#achievements" },
+    { id: 5, name: "Projects", link: "#projects" },
   ];
 
   useEffect(() => {

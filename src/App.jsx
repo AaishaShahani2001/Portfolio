@@ -10,6 +10,7 @@ import Projects from './components/Projects.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import ScrollToTop from './components/ScrollToTop.jsx'
+import Achievements from './components/Achievements.jsx'
 
 function App(){
   useEffect(() => {
@@ -21,6 +22,7 @@ function App(){
       <Hero />
       <About />
       <Skills />
+      <Achievements />
       <Projects />
       <Contact />
       <Footer />
