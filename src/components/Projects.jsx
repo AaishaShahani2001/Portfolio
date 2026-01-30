@@ -3,6 +3,8 @@ import img_flutter from "../assets/img_vue.jpg";
 import img_bmi from "../assets/bmi_calculator.png";
 import img_atlasVue from "../assets/altasVue.png";
 import img_bookhive from "../assets/bookhive.png";
+import img_petpulse from "../assets/petpulse.png";
+import img_medimate from "../assets/img_medimate.png";
 import img_cleanearth from "../assets/cleanEarth.png";
 
 const ProjectCard = ({ image, title, description, live, github, tech, status }) => {
@@ -97,12 +99,32 @@ export default function Projects() {
   const allProjects = [
     {
       image: img_bookhive,
-      title: "PetPulse",
-      description: "Full-stack book management web app.",
+      title: "ChronoLux",
+      description: "Luxury watch store with variants, cart, checkout, admin dashboard.",
       live: "",
       github: "",
       type: "Web",
-      tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
+      tech: ["Next.js", "Typescript", "Tailwind CSS", "Node", "Express", "MongoDB"],
+      status: "Completed",
+    },
+    {
+      image: img_medimate,
+      title: "MediMate",
+      description: "MediMate is a full-stack telemedicine web app for booking doctor appointments and managing health records.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB", "WebRTC", "Socket.io"],
+      status: "Completed",
+    },
+    {
+      image: img_petpulse,
+      title: "PetPulse",
+      description: "PetPulse is a full-stack web app for managing pet health records, adoptions, appointments, profiles, analytics dashboard.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
       status: "Completed",
     },
     {
@@ -112,18 +134,8 @@ export default function Projects() {
       live: "",
       github: "",
       type: "Web",
-      tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
+      tech: ["React", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
       status: "Completed",
-    },
-    {
-      image: img_bookhive,
-      title: "MediMate",
-      description: "Full-stack book management web app.",
-      live: "",
-      github: "",
-      type: "Web",
-      tech: ["React", "Tailwind", "Node", "Express", "MongoDB"],
-      status: "In Progress",
     },
     {
       image: img_atlasVue,
@@ -132,7 +144,7 @@ export default function Projects() {
       live: "",
       github: "",
       type: "Web",
-      tech: ["Vue", "AOS", "Tailwind"],
+      tech: ["Vue", "AOS", "Tailwind CSS"],
       status: "Completed",
     },
     {
