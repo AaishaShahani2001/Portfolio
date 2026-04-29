@@ -16,6 +16,8 @@ import {
   SiMongodb,
   SiMysql,
   SiPostgresql,
+  SiPython,
+  SiDocker,
   SiFlutter,
   SiGithub,
   SiGo,
@@ -54,6 +56,8 @@ export default function Skills() {
 
     "Spring Boot": <SiSpringboot className="text-green-400 text-xl" />,
     Go: <SiGo className="text-cyan-400 text-xl" />,
+    Python: <SiPython className="text-yellow-400 text-xl" />,
+    Docker: <SiDocker className="text-blue-400 text-xl" />,
   };
 
   /* ================= SKILL CATEGORIES ================= */
@@ -76,6 +80,8 @@ export default function Skills() {
         { name: "Express.js", level: 80 },
         { name: "PHP", level: 75 },
         { name: "Java", level: 80 },
+        { name: "Spring Boot", level: 80 },
+        { name: "Go", level: 80 },
       ],
     },
 
@@ -120,8 +126,9 @@ export default function Skills() {
       title: "Currently Learning",
       icon: <FaLayerGroup className="text-purple-400 text-3xl" />,
       skills: [
-        { name: "Spring Boot", level: 75 },
-        { name: "Go", level: 50 },
+        { name: "Python", level: 50 },
+        { name: "Docker", level: 50 },
+        
       ],
     },
   ];
@@ -149,55 +156,67 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="min-h-screen flex flex-col items-center justify-center px-6 py-20 text-white"
+      className="relative min-h-screen px-6 py-24 text-white"
     >
-      <header className="text-center mb-12" data-aos="fade-up">
-        <h1 className="text-4xl font-bold">
-          Technical <span className="text-purple-400">Skills</span>
-        </h1>
-        <p className="text-gray-400 mt-2">
-          Technologies, frameworks, databases & tools I work with.
-        </p>
-      </header>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(168,85,247,0.2),transparent_55%)]" />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl">
-        {skillCategories.map((category, index) => (
-          <div
-            key={index}
-            className="bg-[#1d1b26] p-8 rounded-3xl border border-purple-500/20 
-                       shadow-lg shadow-purple-900/20 hover:shadow-purple-500/40 
-                       transition-all duration-300"
-            data-aos="fade-up"
-            data-aos-delay={150 * index}
-          >
-            <div className="flex items-center space-x-3 mb-5">
-              {category.icon}
-              <h2 className="text-2xl font-semibold">{category.title}</h2>
-            </div>
+      <div className="mx-auto w-full max-w-6xl">
+        <header className="mb-14 text-center" data-aos="fade-up">
+          <p className="mb-3 inline-block rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-purple-300">
+            My Expertise
+          </p>
+          <h1 className="text-4xl font-bold md:text-5xl">
+            Technical <span className="text-purple-400">Skills</span>
+          </h1>
+          <p className="mx-auto mt-3 max-w-2xl text-sm text-gray-300 md:text-base">
+            Technologies, frameworks, databases, and tools I use to build scalable and polished products.
+          </p>
+        </header>
 
-            <div className="space-y-6">
-              {category.skills.map((skill, i) => (
-                <div key={i}>
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="flex items-center gap-2 font-medium">
-                      {iconMap[skill.name]} {skill.name}
-                    </span>
-                    <span className="px-2 py-1 rounded-md bg-purple-600/30 text-purple-300 text-xs font-semibold">
-                      {animatedValues[skill.name] || 0}%
-                    </span>
-                  </div>
-
-                  <div className="w-full h-3 bg-gray-800 rounded-full overflow-hidden">
-                    <div
-                      className="h-3 bg-linear-to-r from-purple-400 to-purple-600 transition-all duration-700"
-                      style={{ width: `${skill.level}%` }}
-                    />
-                  </div>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          {skillCategories.map((category, index) => (
+            <div
+              key={index}
+              className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:border-purple-400/40 hover:bg-white/[0.07] hover:shadow-lg hover:shadow-purple-500/20"
+              data-aos="fade-up"
+              data-aos-delay={100 * index}
+            >
+              <div className="mb-6 flex items-center justify-between">
+                <div className="flex items-center gap-3">
+                  <span className="rounded-xl bg-purple-500/15 p-2">
+                    {category.icon}
+                  </span>
+                  <h2 className="text-xl font-semibold md:text-2xl">{category.title}</h2>
                 </div>
-              ))}
+                <span className="rounded-full border border-purple-300/20 bg-purple-500/10 px-2.5 py-1 text-xs font-semibold text-purple-300">
+                  {category.skills.length} Skills
+                </span>
+              </div>
+
+              <div className="space-y-5">
+                {category.skills.map((skill, i) => (
+                  <div key={i}>
+                    <div className="mb-2 flex items-center justify-between">
+                      <span className="flex items-center gap-2 text-sm font-medium md:text-base">
+                        {iconMap[skill.name]} {skill.name}
+                      </span>
+                      <span className="rounded-md bg-purple-600/20 px-2 py-1 text-xs font-semibold text-purple-200">
+                        {animatedValues[skill.name] || 0}%
+                      </span>
+                    </div>
+
+                    <div className="h-2.5 w-full overflow-hidden rounded-full bg-gray-700/70">
+                      <div
+                        className="h-full rounded-full bg-linear-to-r from-purple-400 via-fuchsia-400 to-purple-600 transition-all duration-300"
+                        style={{ width: `${animatedValues[skill.name] || 0}%` }}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

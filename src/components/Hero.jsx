@@ -6,38 +6,38 @@ import { TypeAnimation } from "react-type-animation";
 
 export default function Hero() {
   return (
-    <div className="relative overflow-hidden min-h-[650px] flex flex-col items-center">
+    <div className="relative flex min-h-[700px] flex-col items-center overflow-hidden">
       <Navbar />
 
       <main
         id="home"
-        className="flex flex-col md:flex-row items-center justify-center w-full px-6 md:px-32 pb-10 md:pb-24 pt-32 mt-10 z-10"
+        className="z-10 mt-10 flex w-full max-w-7xl flex-col items-center justify-center px-6 pt-28 pb-12 md:flex-row md:px-12 md:pb-24 lg:px-20"
       >
-        {/* LEFT CONTENT */}
         <section
-          className="flex-1 md:text-left mt-10 md:mt-0 relative"
+          className="relative mt-10 flex-1 md:mt-0 md:text-left"
           data-aos="fade-up"
           data-aos-duration="600"
         >
-          {/* Background Glow */}
-          <div className="absolute -z-10 w-60 h-60 bg-[#cd3cf5] rounded-full blur-3xl opacity-50 -top-5 -left-12" />
+          <div className="absolute -top-8 -left-12 -z-10 h-64 w-64 rounded-full bg-[#cd3cf5] opacity-40 blur-3xl" />
 
-          {/* INTRO + NAME */}
           <header>
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
-              <span className="text-purple-300 font-semibold">Hi, I&apos;m </span>
+            <p className="mb-4 inline-flex rounded-full border border-purple-400/30 bg-purple-500/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-purple-200">
+              Open To Opportunities
+            </p>
+            <h1 className="mb-3 text-4xl font-bold text-white md:text-5xl lg:text-6xl">
+              <span className="font-semibold text-purple-300">Hi, I&apos;m </span>
               Aaisha Shahani
             </h1>
 
-
-            {/* I’M A + Typing */}
-            <h2 className="text-xl md:text-2xl font-semibold text-purple-300">
+            <h2 className="text-xl font-semibold text-purple-300 md:text-2xl">
               I&apos;m a{" "}
               <TypeAnimation
                 sequence={[
                   "Software Engineer",
                   1500,
                   "Full Stack Developer",
+                  1500,
+                  "Problem Solver",
                   1500,
                 ]}
                 wrapper="span"
@@ -47,74 +47,77 @@ export default function Hero() {
             </h2>
           </header>
 
-          {/* PROFESSIONAL PARAGRAPH */}
-          <p className="text-base md:text-lg text-gray-300 mt-4 mb-6 leading-relaxed max-w-xl">
-            3rd Year Information Technology Student at SLIIT | Passionate about
-            building innovative web and mobile applications
+          <p className="mt-5 mb-7 max-w-2xl text-base leading-relaxed text-gray-300 md:text-lg">
+            Information Technology undergraduate at SLIIT building production-ready web and mobile
+            applications with clean architecture, strong UX, and real-world business outcomes.
           </p>
 
-          {/* SOCIAL BUTTONS */}
-          <div className="flex flex-wrap items-center gap-4 mb-8">
-            {/* GitHub BUTTON */}
+          <div className="mb-8 grid max-w-xl grid-cols-1 gap-3 text-sm text-gray-200 sm:grid-cols-3">
+            <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+              <p className="text-xl font-bold text-white">12+</p>
+              <p className="text-xs uppercase tracking-wider text-purple-200">Projects Built</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+              <p className="text-xl font-bold text-white">Full Stack</p>
+              <p className="text-xs uppercase tracking-wider text-purple-200">Development Focus</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 px-4 py-3">
+              <p className="text-xl font-bold text-white">Web + Mobile</p>
+              <p className="text-xs uppercase tracking-wider text-purple-200">Delivery Experience</p>
+            </div>
+          </div>
+
+          <div className="mb-5 flex flex-wrap items-center gap-3 md:flex-nowrap">
+            <a
+              href="#projects"
+              className="rounded-xl bg-linear-to-r from-purple-500 to-purple-700 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-purple-900/40 transition hover:opacity-90"
+            >
+              View Projects
+            </a>
+            <a
+              href="/Portfolio/cv/Aaisha_Shahani_CV.pdf"
+              download
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-purple-400/40 bg-purple-500/10 px-6 py-3 text-sm font-semibold text-purple-100 transition hover:bg-purple-500/20"
+            >
+              Download CV
+            </a>
             <a
               href="https://github.com/AaishaShahani2001"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 bg-gray-800 hover:bg-gray-900 
-                        text-white px-6 py-3 rounded-xl shadow-md 
-                        transition-transform hover:scale-[1.03]"
+              className="flex items-center gap-2 rounded-xl border border-white/15 bg-slate-900/80 px-5 py-3 text-white shadow-md transition hover:-translate-y-0.5 hover:border-purple-400/40"
             >
               <FiGithub className="text-2xl" />
               <span className="font-semibold">GitHub</span>
             </a>
 
-            {/* LinkedIn BUTTON */}
             <a
               href="https://www.linkedin.com/in/aaishashahani/"
               target="_blank"
               rel="noreferrer"
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 
-                        text-white px-6 py-3 rounded-xl shadow-md
-                        transition-transform hover:scale-[1.03]"
+              className="flex items-center gap-2 rounded-xl border border-blue-400/30 bg-blue-600/90 px-5 py-3 text-white shadow-md transition hover:-translate-y-0.5 hover:bg-blue-600"
             >
               <FiLinkedin className="text-2xl" />
               <span className="font-semibold">LinkedIn</span>
             </a>
           </div>
-
-          
-          {/* CV BUTTON */}
-          <a
-            href="/Portfolio/cv/Aaisha_Shahani_CV.pdf"
-            download
-            target="_blank"
-            rel="noreferrer"
-          >
-            <button
-              className="flex items-center gap-2 bg-purple-700 hover:bg-purple-800 
-               text-white px-6 py-3 rounded-xl shadow-md 
-               transition-transform hover:scale-[1.03]"
-            >
-              <span className="font-semibold">Download CV</span>
-            </button>
-          </a>
-
         </section>
 
-        {/* HERO IMAGE */}
         <figure
           data-aos="fade-up"
           data-aos-duration="700"
-          className="flex-1 flex justify-center md:justify-end mt-10 md:mt-0"
+          className="mt-12 flex flex-1 justify-center md:mt-0 md:justify-end"
         >
-          <img
-            src={imgHero}
-            alt="Hero Image"
-            className="h-80 sm:h-[420px] md:h-[500px] w-[260px] sm:w-[350px] md:w-[430px] 
-                      object-cover rounded-3xl shadow-xl 
-                      transition duration-300 hover:scale-105 
-                      hover:shadow-[0px_0px_40px_rgba(205,60,245,0.6)]"
-          />
+          <div className="relative">
+            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-purple-500/40 to-fuchsia-500/20 blur-2xl" />
+            <img
+              src={imgHero}
+              alt="Aaisha Shahani portrait"
+              className="relative h-80 w-[260px] rounded-3xl border border-white/10 object-cover shadow-xl transition duration-300 hover:scale-[1.02] hover:shadow-[0px_0px_50px_rgba(205,60,245,0.5)] sm:h-[420px] sm:w-[350px] md:h-[500px] md:w-[420px]"
+            />
+          </div>
         </figure>
       </main>
     </div>

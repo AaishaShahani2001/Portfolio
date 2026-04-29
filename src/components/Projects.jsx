@@ -9,88 +9,87 @@ import img_cleanearth from "../assets/cleanEarth.png";
 import img_nexttick from "../assets/nexttick.png";
 import img_travel from "../assets/traveller.png";
 import img_expense from "../assets/expense.png";
+import DetailModel from "./DetailModel";
+import projectDetailMap from "./ProjectDetailMap";
 
-
-const ProjectCard = ({ image, title, description, live, github, tech, status }) => {
+const ProjectCard = ({
+  image,
+  title,
+  description,
+  live,
+  github,
+  tech,
+  status,
+  onOpenDetails,
+}) => {
   return (
     <article
-      className="relative w-full max-w-sm p-5 rounded-3xl overflow-hidden
-      backdrop-blur-xl bg-white/10 border border-white/20 shadow-lg
-      hover:shadow-purple-500/40 transition-all duration-300 group
-      hover:-translate-y-1 hover:scale-[1.01] mx-auto"
+      className="relative mx-auto w-full max-w-sm overflow-hidden rounded-3xl border border-white/20 bg-white/10 p-5 shadow-lg backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:scale-[1.01] hover:shadow-purple-500/40 group"
       data-aos="fade-up"
+      onClick={onOpenDetails}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onOpenDetails();
+        }
+      }}
+      role="button"
+      tabIndex={0}
     >
-      {/* Status Badge */}
       <span
-        className={`absolute top-4 right-4 px-3 py-1 text-xs font-semibold rounded-full z-20
-        ${status === "Completed" ? "bg-green-500 text-white" : "bg-yellow-400 text-black"}`}
+        className={`absolute top-4 right-4 z-20 rounded-full px-3 py-1 text-xs font-semibold ${
+          status === "Completed" ? "bg-green-500 text-white" : "bg-yellow-400 text-black"
+        }`}
       >
         {status}
       </span>
 
-      {/* Glow */}
-      <div className="absolute z-0 w-48 h-48 bg-purple-600/40 blur-3xl rounded-full -top-10 left-5 opacity-30"></div>
+      <div className="absolute -top-10 left-5 z-0 h-48 w-48 rounded-full bg-purple-600/40 opacity-30 blur-3xl"></div>
 
       <div className="relative z-10">
-
-        {/* Image */}
-        <figure className="relative rounded-xl overflow-hidden h-48 mb-4">
+        <figure className="relative mb-4 h-48 overflow-hidden rounded-xl">
           <img
             src={image}
             alt={title}
-            className="w-full h-full object-cover rounded-xl transition-transform duration-300 group-hover:scale-105"
+            className="h-full w-full rounded-xl object-cover transition-transform duration-300 group-hover:scale-105"
           />
         </figure>
 
-        {/* Title */}
         <h3 className="text-xl font-bold text-white">{title}</h3>
+        <p className="mt-1 text-sm text-gray-300">{description}</p>
 
-        {/* Description */}
-        <p className="text-gray-300 text-sm mt-1">{description}</p>
-
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 mt-4 mb-4">
+        <div className="mt-4 mb-4 flex flex-wrap gap-2">
           {tech.map((t, i) => (
             <span
               key={i}
-              className="px-2 py-1 text-xs bg-purple-500/20 text-purple-300
-              rounded-lg border border-purple-500/40"
+              className="rounded-lg border border-purple-500/40 bg-purple-500/20 px-2 py-1 text-xs text-purple-300"
             >
               {t}
             </span>
           ))}
         </div>
 
-        {/* --- ALWAYS VISIBLE BUTTONS --- */}
-
-        <div className="flex flex-col gap-3 mt-4">
-
-          {/* GitHub button - Purple Outline */}
+        <div className="mt-4 flex flex-col gap-3">
           <a
             href={github || "#"}
             target="_blank"
-            className="w-full text-center py-2 rounded-lg 
-              border border-purple-500/50 text-purple-300 
-            hover:bg-purple-500/10 hover:border-purple-500 
-            hover:text-white transition font-medium"
+            rel="noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            className="w-full rounded-lg border border-purple-500/50 py-2 text-center font-medium text-purple-300 transition hover:border-purple-500 hover:bg-purple-500/10 hover:text-white"
           >
             GitHub
           </a>
 
-          {/* Live Demo button */}
           <a
             href={live || "#"}
             target="_blank"
-            className="w-full text-center py-2 rounded-lg 
-              bg-linear-to-r from-purple-500 to-purple-700 
-            text-white font-semibold hover:opacity-90 transition"
+            rel="noreferrer"
+            onClick={(event) => event.stopPropagation()}
+            className="bg-linear-to-r from-purple-500 to-purple-700 w-full rounded-lg py-2 text-center font-semibold text-white transition hover:opacity-90"
           >
             Live Demo
           </a>
-
         </div>
-
-
       </div>
     </article>
   );
@@ -99,8 +98,32 @@ const ProjectCard = ({ image, title, description, live, github, tech, status }) 
 export default function Projects() {
   const [category, setCategory] = useState("All");
   const [fade, setFade] = useState(true);
+  const [showAll, setShowAll] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const allProjects = [
+    {
+      image: img_cleanearth,
+      title: "Smart Campus Operations",
+      description:
+        "Spring Boot based smart campus operations platform for handling campus workflows, service requests, and management modules.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["Spring Boot", "React", "Posgresql"],
+      status: "Completed",
+    },
+    {
+      image: img_bookhive,
+      title: "ITPM MindBridge",
+      description:
+        "IT project management solution focused on planning, collaboration, and progress tracking for team-based software projects.",
+      live: "",
+      github: "",
+      type: "Web",
+      tech: ["React", "Go", "Gin", "Gorm", "Postgresql"],
+      status: "Completed",
+    },
     {
       image: img_nexttick,
       title: "ChronoLux",
@@ -114,7 +137,8 @@ export default function Projects() {
     {
       image: img_medimate,
       title: "MediMate",
-      description: "MediMate is a full-stack telemedicine web app for booking doctor appointments and managing health records.",
+      description:
+        "MediMate is a full-stack telemedicine web app for booking doctor appointments and managing health records.",
       live: "",
       github: "https://github.com/AaishaShahani2001/MediMate.git",
       type: "Web",
@@ -124,7 +148,8 @@ export default function Projects() {
     {
       image: img_petpulse,
       title: "PetPulse",
-      description: "PetPulse is a full-stack web app for managing pet health records, adoptions, appointments, profiles, analytics dashboard.",
+      description:
+        "PetPulse is a full-stack web app for managing pet health records, adoptions, appointments, profiles, analytics dashboard.",
       live: "https://itp-frontend.onrender.com/",
       github: "https://github.com/AaishaShahani2001/Y2S2-ITP.git",
       type: "Web",
@@ -164,11 +189,12 @@ export default function Projects() {
     {
       image: img_employee,
       title: "Employee Payroll and Leave Management System",
-      description: "Built an Employee Payroll & Leave Management System implementing payroll processing, leave approval workflows, and role-based admin dashboards.",
+      description:
+        "Built an Employee Payroll & Leave Management System implementing payroll processing, leave approval workflows, and role-based admin dashboards.",
       live: "",
       github: "https://github.com/AaishaShahani2001/Employee-Payroll-and-Leave-Management-System.git",
       type: "Web",
-      tech: ["Java",  "Jsp", "Servlets", "MySQL"],
+      tech: ["Java", "Jsp", "Servlets", "MySQL"],
       status: "Completed",
     },
     {
@@ -178,13 +204,14 @@ export default function Projects() {
       live: "",
       github: "https://github.com/AaishaShahani2001/mr.traveller.git",
       type: "Web",
-      tech: ["HTML",  "CSS", "JavaScript", "MySQL"],
+      tech: ["HTML", "CSS", "JavaScript", "MySQL"],
       status: "Completed",
     },
     {
       image: img_bmi,
       title: "BMI Calculator",
-      description: "Developed a BMI Calculator web app with real-time input validation and health classification logic using HTML, CSS, and JavaScript.",
+      description:
+        "Developed a BMI Calculator web app with real-time input validation and health classification logic using HTML, CSS, and JavaScript.",
       live: "https://aaishashahani2001.github.io/BMI_Calculator/",
       github: "https://github.com/AaishaShahani2001/BMI_Calculator.git",
       type: "Web",
@@ -194,7 +221,8 @@ export default function Projects() {
     {
       image: img_cleanearth,
       title: "CleanEarth",
-      description: "Built CleanEarth, a sustainability-focused web platform for waste reporting, recycling awareness, and service management using modern web technologies.",
+      description:
+        "Built CleanEarth, a sustainability-focused web platform for waste reporting, recycling awareness, and service management using modern web technologies.",
       live: "https://aaishashahani2001.github.io/CleanEarth/",
       github: "https://github.com/AaishaShahani2001/CleanEarth.git",
       type: "Web",
@@ -207,6 +235,7 @@ export default function Projects() {
     setFade(false);
     setTimeout(() => {
       setCategory(cat);
+      setShowAll(false);
       setFade(true);
     }, 250);
   };
@@ -215,34 +244,29 @@ export default function Projects() {
     category === "All"
       ? allProjects
       : allProjects.filter((p) => p.type === category);
+  const visibleProjects = showAll ? filtered : filtered.slice(0, 3);
 
   return (
     <main className="p-6 sm:p-10">
-      {/* Header */}
       <section id="projects" data-aos="fade-up">
         <header className="text-center">
-          <h1 className="text-3xl text-white sm:text-4xl font-bold mb-4">
+          <h1 className="mb-4 text-3xl font-bold text-white sm:text-4xl">
             My <span className="text-purple-400">Projects</span>
           </h1>
-          <p className="text-gray-400 text-sm sm:text-base">
-            Explore my best Web & Mobile apps.
-          </p>
+          <p className="text-sm text-gray-400 sm:text-base">Explore my best Web & Mobile apps.</p>
         </header>
       </section>
 
-      {/* Category Filter */}
-      <div className="flex justify-center gap-3 mt-6 mb-8 relative cursor-pointer">
-
-        {/* Sliding highlight */}
+      <div className="relative mt-6 mb-8 flex cursor-pointer justify-center gap-3">
         <div
-          className="absolute h-8 w-20 bg-purple-500/20 rounded-xl transition-all duration-300 -z-10"
+          className="absolute -z-10 h-8 w-20 rounded-xl bg-purple-500/20 transition-all duration-300"
           style={{
             left:
               category === "All"
                 ? "calc(50% - 110px)"
                 : category === "Web"
-                  ? "calc(50% - 35px)"
-                  : "calc(50% + 40px)",
+                ? "calc(50% - 35px)"
+                : "calc(50% + 40px)",
           }}
         ></div>
 
@@ -250,23 +274,23 @@ export default function Projects() {
           <button
             key={c}
             onClick={() => handleFilter(c)}
-            className={`px-4 py-1.5 rounded-xl text-sm font-medium transition-all border cursor-pointer
-            ${category === c
-                ? "text-purple-400 border-purple-500"
-                : "text-white border-white/20 hover:bg-white/10"
-              }`}
+            className={`cursor-pointer rounded-xl border px-4 py-1.5 text-sm font-medium transition-all ${
+              category === c
+                ? "border-purple-500 text-purple-400"
+                : "border-white/20 text-white hover:bg-white/10"
+            }`}
           >
             {c}
           </button>
         ))}
       </div>
 
-      {/* Project Grid */}
       <section
-        className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 transition-opacity duration-300 ${fade ? "opacity-100" : "opacity-0"
-          }`}
+        className={`grid grid-cols-1 gap-6 transition-opacity duration-300 sm:grid-cols-2 lg:grid-cols-3 ${
+          fade ? "opacity-100" : "opacity-0"
+        }`}
       >
-        {filtered.map((project, index) => (
+        {visibleProjects.map((project, index) => (
           <ProjectCard
             key={index}
             image={project.image}
@@ -276,9 +300,32 @@ export default function Projects() {
             github={project.github}
             tech={project.tech}
             status={project.status}
+            onOpenDetails={() =>
+              setSelectedProject({
+                ...project,
+                keyComponents: projectDetailMap[project.title] || project.tech || [],
+              })
+            }
           />
         ))}
       </section>
+
+      {filtered.length > 3 && (
+        <div className="mt-10 flex justify-center">
+          <button
+            onClick={() => setShowAll((prev) => !prev)}
+            className="rounded-xl border border-purple-500/50 px-6 py-2.5 text-sm font-semibold text-purple-300 transition hover:bg-purple-500/15 hover:text-white"
+          >
+            {showAll ? "View Less" : "View More"}
+          </button>
+        </div>
+      )}
+
+      <DetailModel
+        project={selectedProject}
+        isOpen={Boolean(selectedProject)}
+        onClose={() => setSelectedProject(null)}
+      />
     </main>
   );
 }
