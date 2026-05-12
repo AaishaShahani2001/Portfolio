@@ -10,6 +10,7 @@ import img_nexttick from "../assets/nexttick.png";
 import img_travel from "../assets/traveller.png";
 import img_expense from "../assets/expense.png";
 import img_smartcampus from "../assets/smart_campus.png";
+import img_mindbridge from "../assets/mindbridge.png";
 import DetailModel from "./DetailModel";
 import projectDetailMap from "./ProjectDetailMap";
 
@@ -115,12 +116,12 @@ export default function Projects() {
       status: "Completed",
     },
     {
-      image: img_bookhive,
+      image: img_mindbridge,
       title: "ITPM MindBridge",
       description:
         "IT project management solution focused on planning, collaboration, and progress tracking for team-based software projects.",
       live: "",
-      github: "",
+      github: "https://github.com/AaishaShahani2001/Y3S1-ITPM.git",
       type: "Web",
       tech: ["React", "Go", "Gin", "Gorm", "Postgresql(Neon DB)"],
       status: "Completed",
