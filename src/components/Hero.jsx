@@ -37,8 +37,6 @@ export default function Hero() {
                   1500,
                   "Full Stack Developer",
                   1500,
-                  "Problem Solver",
-                  1500,
                 ]}
                 wrapper="span"
                 speed={50}
@@ -111,7 +109,7 @@ export default function Hero() {
           className="mt-12 flex flex-1 justify-center md:mt-0 md:justify-end"
         >
           <div className="relative">
-            <div className="absolute -inset-3 rounded-3xl bg-gradient-to-r from-purple-500/40 to-fuchsia-500/20 blur-2xl" />
+            <div className="absolute -inset-3 rounded-3xl bg-linear-to-r from-purple-500/40 to-fuchsia-500/20 blur-2xl" />
             <img
               src={imgHero}
               alt="Aaisha Shahani portrait"

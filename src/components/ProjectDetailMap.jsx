@@ -1,20 +1,23 @@
 const projectDetailMap = {
-  "Smart Campus Operations": [
+  "Smart Campus Operations Hub": [
     "Incident ticket lifecycle (OPEN → IN_PROGRESS → RESOLVED → CLOSED)",
     "Technician assignment and SLA-based priority handling",
     "Resource booking system with approval workflow and waitlist",
-    "JWT authentication with role-based access (Admin, Technician, User)",
+    "Google Auth and JWT authentication with role-based access (Admin, Technician, User)",
     "Attachment uploads and comment-based communication system",
     "Admin dashboard for monitoring tickets, bookings, and system analytics",
   ],
 
   "ITPM MindBridge": [
-    "Mood-based counselor recommendation engine",
+    "Mood-based counselor recommendation system using AI algorithms",
     "Appointment booking system with date/time slot selection",
     "Waitlist system for fully booked counselor schedules",
     "Counselor onboarding with approval workflow and availability management",
-    "JWT authentication with Google OAuth integration",
+    "JWT authentication",
     "AI-powered mental wellbeing chatbot integration (Groq API)",
+    "Treatment Plans and Progress Tracking for both counselors and users",
+    "Admin dashboard for managing counselors, appointments, and user analytics",
+    "Event management system for workshops and support groups with registration and attendance tracking",
   ],
 
   ChronoLux: [
@@ -22,7 +25,7 @@ const projectDetailMap = {
     "Shopping cart and secure checkout flow (Online + COD)",
     "Order lifecycle management with status tracking",
     "Admin dashboard for product, order, and inventory control",
-    "Responsive UI with Next.js SSR optimization",
+    "Responsive UI",
   ],
 
   MediMate: [

@@ -9,6 +9,7 @@ import img_cleanearth from "../assets/cleanEarth.png";
 import img_nexttick from "../assets/nexttick.png";
 import img_travel from "../assets/traveller.png";
 import img_expense from "../assets/expense.png";
+import img_smartcampus from "../assets/smart_campus.png";
 import DetailModel from "./DetailModel";
 import projectDetailMap from "./ProjectDetailMap";
 
@@ -103,14 +104,14 @@ export default function Projects() {
 
   const allProjects = [
     {
-      image: img_cleanearth,
-      title: "Smart Campus Operations",
+      image: img_smartcampus,
+      title: "Smart Campus Operations Hub",
       description:
         "Spring Boot based smart campus operations platform for handling campus workflows, service requests, and management modules.",
       live: "",
-      github: "",
+      github: "https://github.com/AaishaShahani2001/it3030-paf-2026-smart-campus-group_WE_311_2.1.git",
       type: "Web",
-      tech: ["Spring Boot", "React", "Posgresql"],
+      tech: ["Spring Boot", "React", "Posgresql(Neon DB)"],
       status: "Completed",
     },
     {
@@ -121,7 +122,7 @@ export default function Projects() {
       live: "",
       github: "",
       type: "Web",
-      tech: ["React", "Go", "Gin", "Gorm", "Postgresql"],
+      tech: ["React", "Go", "Gin", "Gorm", "Postgresql(Neon DB)"],
       status: "Completed",
     },
     {

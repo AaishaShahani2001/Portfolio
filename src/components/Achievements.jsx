@@ -2,6 +2,7 @@ import React from "react";
 import { FiEye, FiAward } from "react-icons/fi";
 import sqlImg from "../assets/SQL-bootcamp.jpg";
 import gitImg from "../assets/git-github-bootcamp.jpg";
+import mongodb from "../assets/MongoDB.png";
 
 export default function Achievements() {
   const achievements = [
@@ -13,6 +14,10 @@ export default function Achievements() {
       title: "Git & GitHub Bootcamp Certificate",
       image: gitImg,
     },
+    {
+      title: "MongoDB Database Admin Path (Self-Managed)",
+      image: mongodb,
+    }
   ];
 
   return (
